@@ -54,7 +54,52 @@ on:
       make-arguments:
         required: false
         type: string
+      dry-run:
+        required: false
+        type: boolean
+        default: false
 
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Target Platform'
+        required: true
+        type: string
+      msvc-toolset-version:
+        description: 'MSVC Toolset Version'
+        required: true
+        type: string
+      msvc-toolset-architecture:
+        description: 'MSVC Toolset Architecture'
+        required: true
+        type: string
+      make-target:
+        description: 'Make Target'
+        required: false
+        type: string
+        default: 'product-bundles test-bundles'
+      debug-levels:
+        description: 'Debug Levels (JSON array)'
+        required: false
+        type: string
+        default: '[ "debug", "release" ]'
+      extra-conf-options:
+        description: 'Extra Config Options'
+        required: false
+        type: string
+      configure-arguments:
+        description: 'Configure Arguments'
+        required: false
+        type: string
+      make-arguments:
+        description: 'Make Arguments'
+        required: false
+        type: string
+      dry-run:
+        description: 'Dry Run'
+        required: false
+        type: boolean
+        default: false
 env:
   # These are needed to make the MSYS2 bash work properly
   MSYS2_PATH_TYPE: minimal
