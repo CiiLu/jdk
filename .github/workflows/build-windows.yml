@@ -108,7 +108,7 @@ env:
 jobs:
   build-windows:
     name: build
-    runs-on: windows-2019
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
